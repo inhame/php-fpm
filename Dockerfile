@@ -1,10 +1,11 @@
 FROM php:fpm-alpine
 RUN \
-	apk add --no-cache libpng libpng-dev libjpeg-turbo-dev libwebp-dev zlib-dev libxpm-dev libmcrypt-dev autoconf && \
+	apk add --no-cache libpng && \ 
+	apk add --nocache --virtual buildDeps libpng-dev libjpeg-turbo-dev libwebp-dev zlib-dev libxpm-dev libmcrypt-dev autoconf gcc && \
 	pecl install mcrypt-1.0.1 && \
 	docker-php-ext-install gd && \
 	docker-php-ext-install mcrypt && \
-	apk del libpng-dev libjpeg-turbo-dev libwebp-dev zlib-dev libxpm-dev libmcrypt-dev autoconf && \
+	apk del buildDeps && \
 	docker-php-ext-install opcache && \
 	docker-php-ext-install mysqli && \
 	docker-php-ext-install pdo_mysql && \
