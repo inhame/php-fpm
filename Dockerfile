@@ -4,7 +4,6 @@ RUN \
 	apk add --nocache --virtual buildDeps libpng-dev libjpeg-turbo-dev libwebp-dev zlib-dev libxpm-dev libmcrypt-dev autoconf gcc g++ make && \
 	pecl install mcrypt-1.0.1 && \
 	docker-php-ext-install gd && \
-	docker-php-ext-install mcrypt && \
 	apk del buildDeps && \
 	docker-php-ext-install opcache && \
 	docker-php-ext-install mysqli && \
@@ -14,8 +13,8 @@ RUN \
 	docker-php-ext-install intl && \
 	docker-php-ext-install soap && \
 	docker-php-ext-install zip && \
-	docker-php-ext-enable gd && \
 	docker-php-ext-enable mcrypt && \
+	docker-php-ext-enable gd && \
 	docker-php-ext-enable opcache && \
 	docker-php-ext-enable mysqli && \
 	docker-php-ext-enable pdo_mysql && \
