@@ -18,8 +18,8 @@ RUN \
 	docker-php-ext-enable bcmath && \
 	docker-php-ext-enable intl && \
 	docker-php-ext-enable soap && \
-	docker-php-ext-enable zip
+	docker-php-ext-enable zip && \
 	docker-php-ext-enable opcache && \
 	docker-php-ext-enable mysqli && \
 	docker-php-ext-enable pdo_mysql && \
-	apk del buildDeps && \
+	apk del buildDeps
