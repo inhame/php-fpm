@@ -1,7 +1,7 @@
 FROM php:fpm-alpine
 RUN \
 	apk add --no-cache libpng libxslt && \ 
-	apk add --nocache --virtual buildDeps libpng-dev libjpeg-turbo-dev libwebp-dev zlib-dev libxpm-dev libmcrypt-dev libxslt-dev autoconf gcc g++ make && \
+	apk add --nocache --virtual buildDeps libpng-dev libjpeg-turbo-dev libwebp-dev zlib-dev libxpm-dev libmcrypt-dev libxslt-dev icu-dev libxml2-dev libzip-dev autoconf gcc g++ make && \
 	pecl install mcrypt-1.0.1 && \
 	docker-php-ext-install gd && \
 	docker-php-ext-install xsl && \
