@@ -1,7 +1,7 @@
 FROM php:fpm-alpine
 RUN \
 	apk add --no-cache libpng libpng-dev libjpeg-turbo-dev libwebp-dev zlib-dev libxpm-dev libmcrypt-dev && \
-	pecl install mcrypt-1.0.1 && \n
+	pecl install mcrypt-1.0.1 && \
 	docker-php-ext-install gd && \
 	docker-php-ext-install mcrypt && \
 	apk del libpng-dev libjpeg-turbo-dev libwebp-dev zlib-dev libxpm-dev libmcrypt-dev && \
