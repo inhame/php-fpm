@@ -1,4 +1,4 @@
-FROM php:fpm-alpine
+FROM php:7.0.32-fpm-alpine
 RUN \
 	apk add --no-cache libpng libjpeg freetype libxslt icu-libs libmcrypt && \ 
 	apk add --nocache --virtual buildDeps freetype-dev libpng-dev libjpeg-turbo-dev zlib-dev libxpm-dev libmcrypt-dev libxslt-dev icu-dev libxml2-dev libzip-dev autoconf gcc g++ make && \
