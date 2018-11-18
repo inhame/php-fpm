@@ -1,9 +1,9 @@
 FROM php:7.0.32-fpm-alpine
 RUN \
-	apk add --no-cache libpng libjpeg freetype libxslt icu-libs libmcrypt && \ 
+	apk add --no-cache libpng libjpeg freetype libxslt icu-libs && \ 
 	apk add --nocache --virtual buildDeps freetype-dev libpng-dev libjpeg-turbo-dev zlib-dev libxpm-dev libmcrypt-dev libxslt-dev icu-dev libxml2-dev libzip-dev autoconf gcc g++ make && \
 	docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include/ && \
-	pecl install mcrypt-1.0.1 && \
+	docker-php-ext-install mcrypt && \
 	docker-php-ext-install gd && \
 	docker-php-ext-install xsl && \
 	docker-php-ext-install bcmath && \
